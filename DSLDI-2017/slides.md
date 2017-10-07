@@ -48,17 +48,66 @@ Tools:
 
 \Large{Demo}
 
+# 
+
+So what kind of extensions can we build?
+
 # Modular determinism
+
+- Bridge productions
+
+```
+production bridge
+HostNT ::= MarkingTerminal ExtensionNT
+```
+
+- Follow sets
 
 # Modular well-definedness
 
+- Use forwarding
+
+```
+production bridge
+h::HostNT ::= MarkingTerminal e::ExtensionNT
+{
+  forwards to e.asHostAst;
+}
+```
+
+- Flow type restrictions
+
 # Non-interference
 
-# Challenge: IDEs
+- Forward to something actually equivalent
+- Modular proofs, testing methodology, and neat tricks! See our talk Tues at SLE!
+
+# 
+
+Remaining challenges
+
+# Challenge: IDE support
+
+- We can build them
+- The extensibility model isn't great
+    - Refactorings, in particular.
 
 # Challenge: Debuggers
 
+Our model might work.
+
+- Consider that Rust used stock GDB
+- We just need to emit the right DWARF debugging metadata
+- Huge development effort, though
+- Right now:  .xc --> .c --> .o
+- Need a full compiler: .xc --> .o
+
 # Challenge: Host language evolution
+
+- Language changes potentially break extensions
+- Bad news: Not just language changes, but compiler changes too
+- Good news: MWDA can actually detect potentially breaking changes
+- Good news: We've got a nice CI system
 
 # Impact
 

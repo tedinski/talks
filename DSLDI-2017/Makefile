@@ -14,4 +14,3 @@ slides.pdf: slides.tex
 slides.tex: slides.md template.tex
 	pandoc -s -H template.tex -t beamer -o slides.tex slides.md
 
-
