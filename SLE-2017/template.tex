@@ -1,0 +1,54 @@
+
+%% My customizations for styling things
+
+% Serif my titles, and that's it.
+\usefonttheme[stillsansserifsmall, stillsansseriftext]{serif}
+
+% Some fonts that aren't default?
+\setsansfont{Liberation Sans}
+\setmainfont{Nimbus Roman No9 L}
+\setmonofont{Ubuntu Mono}
+
+% Mostly, make headings bigger
+\setbeamerfont{title}{size=\huge,series=\bfseries}
+\setbeamerfont*{subtitle}{size=\large,series=\mdseries}
+\setbeamerfont{author}{size=\small}
+\setbeamerfont{date}{size=\small}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+%\setbeamerfont{section title}{size=\Large,series=\bfseries}
+
+% Ugly beamer color scheme GO AWAY
+\definecolor{mySoftBlack}{HTML}{444444}
+
+\setbeamercolor{titlelike}{fg=mySoftBlack}
+%\setbeamercolor{title}{fg=mySoftBlack}
+%\setbeamercolor{subtitle}{fg=black}
+%\setbeamercolor{frametitle}{fg=mySoftBlack}
+%\setbeamercolor{author}{fg=black}
+%\setbeamercolor{date}{fg=black}
+%\setbeamercolor{institute}{fg=black}
+\setbeamercolor{structure}{fg=mySoftBlack}
+
+\setbeamercolor{top}{fg=black,bg=mySoftBlack}
+
+% Half-ass some black bars at the top/bottom
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[ht=1.7ex]{top}
+    \vskip2pt\mbox{}
+  \end{beamercolorbox}
+}
+\setbeamertemplate{footline}{%
+  \begin{beamercolorbox}[ht=1.7ex]{top}
+    \vskip2pt\mbox{}
+  \end{beamercolorbox}
+}
+
+\lstset{
+    basicstyle=\ttfamily
+}
+
+\newcommand{\StartCol}{\begin{minipage}[t]{0.49\linewidth}\footnotesize}
+\newcommand{\EndCol}{\end{minipage}}
+
+%%
+
