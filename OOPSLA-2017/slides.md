@@ -4,6 +4,7 @@ subtitle: "Making language extension practical"
 author:   Ted Kaminski, Lucas Kramer, Travis Carlson, and Eric Van Wyk \newline (University of Minnesota)
 date:     October 2017
 fontsize: 12pt
+classoption: aspectratio=169
 ---
 
 ## Language extension research program goals
@@ -64,16 +65,20 @@ Concurrent work
 
 \vspace{1pt}
 
-- What kinds of extensions are possible?
-- 2nd/3rd order effect of restrictions:
-    - What kinds of extensions can't we build?
-    - What changes to the C host are we motivated to build?
+- What kinds of extensions can we build?
+- What kinds of extensions can't we build for plain C?
+- What host language modifications allow for more kinds of extensions?
 
 ## The example again
 
 ## More extensions
 
-- What should we put here?
+- Halide
+- Sqlite
+- Tensor/matrix/vector
+- Go concurrency
+- Matlab FFI
+- Templates
 
 ## Effects of restrictions
 
@@ -91,11 +96,13 @@ Concurrent work
 
 ## Summary
 
+- Extended notion of expression problem
 - Reliable composition
 - Breadth of extensions possible
 - Language extension impacts language design
     - We can get experience with extensions before standardization
     - Clear line between extension and modification
+- Spell out: good for language designers, good for programmers
 
 ## Thanks!
 

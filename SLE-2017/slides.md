@@ -1,9 +1,10 @@
 ---
 title:    Ensuring Non-interference of Composable Language Extensions
 subtitle: "A practical approach"
-author:   Ted Kaminski \newline (University of Minnesota)
+author:   Ted Kaminski and Eric Van Wyk \newline (University of Minnesota)
 date:     October 2017
 fontsize: 12pt
+classoption: aspectratio=169
 ---
 
 ## Library model of language extension
