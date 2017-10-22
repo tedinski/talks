@@ -4,7 +4,7 @@ subtitle: "Making language extension a practical tool"
 author:   Ted Kaminski and Eric Van Wyk \newline (University of Minnesota)
 date:     October 2017
 fontsize: 12pt
-classoption: aspectratio=169
+classoption: aspectratio=169, xcolor=dvipsnames
 ---
 
 ## Language extension
@@ -15,7 +15,7 @@ classoption: aspectratio=169
 \vspace{1pt}
 
 - But this approach hasn't really caught on
-- Macros have to some extent...
+- Macros have, to some extent...
 
 ## Hypothesis: reliable composition
 
@@ -38,8 +38,8 @@ $$\big(\forall i \in [1,n]. \mathit{local\_restrict}(H \triangleleft E_i)\big) \
 Tools:
 
 - Attribute grammars with _forwarding_
-- Copper: LALR(1) modular determinism analysis
-- Silver: AG modular well-definedness analysis
+- Copper: LALR(1) _modular determinism analysis_
+- Silver: AG _modular well-definedness analysis_
 - Non-interference through _coherence_
 
 \vspace{1pt}
@@ -47,110 +47,87 @@ Tools:
 - AbleC: an extensible C compiler front-end
 
 
-## Demo
+## Extensions we can build for AbleC
+
+\StartCol
 
 \begin{alltt}
 \small
 \begin{tabbing}
 aa\=aa\=aa\=aa\=aa\=aa\=\kill
+\\
 typedef \hib{datatype Tree} Tree; \\
 \hib{datatype Tree \ttlbrace} \\
 \>\hib{Fork (} Tree*\hib{,} Tree*\hib{,} const char* \hib{);} \\
 \>\hib{Leaf (} const char* \hib{); }\\
-\hib{\ttrbrace;} \\
-\\
+\hib{\ttrbrace;}
+\end{tabbing}
+\end{alltt}
+
+\EndCol\StartCol
+
+\begin{alltt}
+\small
+\begin{tabbing}
+aa\=aa\=aa\=aa\=aa\=aa\=\kill
 \cilk{cilk} int count\_matches (Tree *t) \ttlbrace \\
-  \hib{match (} t \hib{) \ttlbrace} \\
-    \hib{Fork(t1,t2,str): \ttlbrace} \\ 
-      int res\_t, res\_t1, res\_t2;   \\
-      \cilk{spawn res\_t1 = count\_matches(} t1 \cilk{);}  \\
-      \cilk{spawn res\_t2 = count\_matches(} t2 \cilk{);}  \\
-      res\_t = ( str \regex{=~ /foo[1-9]+/} ) ? 1 : 0;  \\
-      \cilk{sync;} \\
-      \cilk{cilk return} res\_t1 + res\_t2 + res\_t \cilk{;} \\
-    \hib{\ttrbrace ;}  \\
-    \hib{Leaf(str): \ttlbrace} return ( str \regex{=~ /foo[1-9]+/} ) ? 1 : 0; \hib{\ttrbrace ;} \\
-  \hib{\ttrbrace}  \\
+\>\hib{match (} t \hib{) \ttlbrace} \\
+\>\>\hib{Fork(t1,t2,str): \ttlbrace} \\ 
+\>\>\>int res\_t, res\_t1, res\_t2; \\
+\>\>\>\cilk{spawn res\_t1 = count\_matches(} t1 \cilk{);} \\
+\>\>\>\cilk{spawn res\_t2 = count\_matches(} t2 \cilk{);} \\
+\>\>\>res\_t = (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \\
+\>\>\>\cilk{sync;} \\
+\>\>\>\cilk{cilk return} res\_t1 + res\_t2 + res\_t \cilk{;} \\
+\>\>\hib{\ttrbrace ;} \\
+\>\>\hib{Leaf(str): \ttlbrace} return (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \hib{\ttrbrace ;} \\
+\>\hib{\ttrbrace} \\
 \ttrbrace
 \end{tabbing}
 \end{alltt}
 
+\EndCol
 
-## 30 sec Silver crash course
+## Impact of restrictions on extension design
 
-```
-production or
-lhs::Expr ::= a::Expr  b::Expr
-{
-  lhs.pp = s"${a.pp} | ${b.pp}";
-  lhs.eval = a.eval || b.eval;
-}
+\StartCol
 
-production implies
-lhs::Expr ::= a::Expr  b::Expr
-{
-  lhs.pp = s"${a.pp} -> ${b.pp}";
-  forwards to or(not(a), b);
-}
-```
+\begin{alltt}
+\small
+\begin{tabbing}
+aa\=aa\=aa\=aa\=aa\=aa\=\kill
+\\
+typedef \hib{datatype Tree} Tree; \\
+\hib{datatype Tree \ttlbrace} \\
+\>\hib{Fork (} Tree*\hib{,} Tree*\hib{,} const char* \hib{);} \\
+\>\hib{Leaf (} const char* \hib{); }\\
+\hib{\ttrbrace;}
+\end{tabbing}
+\end{alltt}
 
+\EndCol\StartCol
 
-# So what kind of extensions can we build?
+\begin{alltt}
+\small
+\begin{tabbing}
+aa\=aa\=aa\=aa\=aa\=aa\=\kill
+\cilk{cilk} int count\_matches (Tree *t) \ttlbrace \\
+\>\hib{match (} t \hib{) \ttlbrace} \\
+\>\>\hib{Fork(t1,t2,str): \ttlbrace} \\ 
+\>\>\>int res\_t, res\_t1, res\_t2; \\
+\>\>\>\cilk{spawn res\_t1 = count\_matches(} t1 \cilk{);} \\
+\>\>\>\cilk{spawn res\_t2 = count\_matches(} t2 \cilk{);} \\
+\>\>\>res\_t = (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \\
+\>\>\>\cilk{sync;} \\
+\>\>\>\cilk{cilk return} res\_t1 + res\_t2 + res\_t \cilk{;} \\
+\>\>\hib{\ttrbrace ;} \\
+\>\>\hib{Leaf(str): \ttlbrace} return (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \hib{\ttrbrace ;} \\
+\>\hib{\ttrbrace} \\
+\ttrbrace
+\end{tabbing}
+\end{alltt}
 
-
-## Modular determinism
-
-- Bridge productions
-
-\vspace{-10pt}
-
-```
-production bridge
-HostNT ::= MarkingTerminal ExtensionNT
-```
-
-Okay: `match(Expr) { ...`  
-Not okay: `id<TypeExpr>`
-
-- Follow sets
-
-Okay: `terminal(Expr, Expr)`  
-Not okay: `Expr :+: Expr`  
-(Okay: `BinOp ::= ':+:'`)
-
-## Modular well-definedness
-
-- Use forwarding
-
-\vspace{-10pt}
-
-```
-production bridge
-h::HostNT ::= MarkingTerminal e::ExtensionNT
-{
-  forwards to e.asHostAst;
-}
-```
-
-\vspace{-10pt}
-
-- Flow type restrictions
-
-Okay: `lhs.newSyn = ... lhs.newInh`  
-Not okay: `forwards to ... lhs.newInh`  
-(Okay: creative use of `lhs.env`)
-
-## Non-interference
-
-- Forward to something actually equivalent
-
-Not okay: `letRec` forwards to `let` altering `env` and `translation`  
-Okay: arbitrary analysis of `lhs.env` and subtrees  
-(Not okay: expecting to find forwarding productions there)
-
-- Modular proofs, testing methodology, and neat tricks!
-- See our talk Tues at SLE!
-
+\EndCol
 
 # Remaining challenges
 
@@ -178,6 +155,11 @@ Okay: arbitrary analysis of `lhs.env` and subtrees
 - Bad news: Not just language changes, but compiler changes too
 - Good news: MWDA can detect potentially breaking changes
 - Good news: We've got a nice CI system
+
+## Summary
+
+- Silver & Copper as platform for building extensible languages
+- AbleC as extensible C compiler
 
 ## Impact
 
