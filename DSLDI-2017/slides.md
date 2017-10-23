@@ -175,7 +175,7 @@ This is why we want the library model of language extension.
 
 ## Thanks!
 
-Get in touch
+Get in touch:
 
 - Eric Van Wyk `<evw@cs.umn.edu>`
 - Ted Kaminski `<tedinski@cs.umn.edu>`
