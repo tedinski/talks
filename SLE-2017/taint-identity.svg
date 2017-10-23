@@ -53,9 +53,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="467.34118"
-     inkscape:cy="212.25978"
+     inkscape:zoom="1"
+     inkscape:cx="354.27442"
+     inkscape:cy="218.56537"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -63,8 +63,8 @@
      fit-margin-left="0.5"
      fit-margin-right="0.5"
      fit-margin-bottom="0"
-     inkscape:window-width="1855"
-     inkscape:window-height="1176"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -77,7 +77,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -154,30 +154,25 @@
            y="578.36218"
            style="font-size:28px">T</tspan></text>
     </g>
-    <g
-       id="g3029"
-       transform="translate(8,-12)">
-      <ellipse
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.49019608"
-         id="path3020"
-         transform="translate(26.735813,59.22)"
-         cx="177.5"
-         cy="441.86218"
-         rx="58.5"
-         ry="33.5" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         x="173.29646"
-         y="511.23218"
-         id="text3022"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan3024"
-           x="173.29646"
-           y="511.23218"
-           style="font-size:28px">taint</tspan></text>
-    </g>
+    <ellipse
+       ry="33.5"
+       rx="58.5"
+       cy="489.08218"
+       cx="212.23581"
+       id="path3020"
+       style="fill:none;stroke:#000000;stroke-width:4.3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.49019608" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3022"
+       y="499.23218"
+       x="181.29646"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-size:28px"
+         y="499.23218"
+         x="181.29646"
+         id="tspan3024"
+         sodipodi:role="line">taint</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 91.066201,466.63091 125.53909,414.42526"
@@ -192,7 +187,6 @@
        id="path3040"
        inkscape:connector-type="polyline"
        inkscape:connector-curvature="0"
-       inkscape:connection-start="#g3029"
        inkscape:connection-start-point="d4" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -202,30 +196,26 @@
        inkscape:connector-curvature="0"
        inkscape:connection-start="#g3003"
        inkscape:connection-start-point="d4"
-       inkscape:connection-end="#g3029"
        inkscape:connection-end-point="d4" />
-    <g
-       id="g4215">
-      <ellipse
-         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.49019608"
-         id="path3046"
-         cx="146.23581"
-         cy="281.08218"
-         rx="58.5"
-         ry="33.5" />
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-         x="134.63112"
+    <ellipse
+       ry="33.5"
+       rx="58.5"
+       cy="281.08218"
+       cx="146.23581"
+       id="path3046"
+       style="fill:none;stroke:#000000;stroke-width:4.3;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.49019608" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text3048"
+       y="291.7782"
+       x="134.63112"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-size:28px"
          y="291.7782"
-         id="text3048"
-         sodipodi:linespacing="125%"><tspan
-           sodipodi:role="line"
-           id="tspan3050"
-           x="134.63112"
-           y="291.7782"
-           style="font-size:28px">id</tspan></text>
-    </g>
+         x="134.63112"
+         id="tspan3050"
+         sodipodi:role="line">id</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 146.23581,314.58218 0,35"
@@ -370,5 +360,45 @@
        inkscape:connector-curvature="0"
        transform="translate(43.26,245.08218)"
        sodipodi:nodetypes="cc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4196"
+       d="m 263,509.4563 102.30439,0"
+       style="fill:none;stroke:#000000;stroke-width:3.26503372;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)" />
+    <text
+       sodipodi:linespacing="125%"
+       id="text4198"
+       y="504.10294"
+       x="277.9812"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.25563049px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       xml:space="preserve"><tspan
+         style="font-size:14.51126099px"
+         y="504.10294"
+         x="277.9812"
+         id="tspan4200"
+         sodipodi:role="line">forwards</tspan></text>
+    <g
+       transform="translate(307,-52)"
+       id="g4202">
+      <circle
+         r="30.5"
+         cy="573.86218"
+         cx="97.5"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.49019608"
+         id="circle4204"
+         transform="translate(-3.59,-5.202)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;line-height:125%;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+         x="86"
+         y="578.36218"
+         id="text4206"
+         sodipodi:linespacing="125%"><tspan
+           sodipodi:role="line"
+           id="tspan4208"
+           x="86"
+           y="578.36218"
+           style="font-size:28px">F</tspan></text>
+    </g>
   </g>
 </svg>

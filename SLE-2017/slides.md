@@ -11,6 +11,12 @@ classoption: aspectratio=169
 
 ![](extension-model.pdf)
 
+## Goals
+
+- Extend syntax, extend analysis
+- Want best of both worlds, external and embedded DSLs
+- Reliable composition is key to library model
+
 ## Previous work
 
 **Forwarding:**
@@ -22,11 +28,49 @@ classoption: aspectratio=169
 **Modular well-definedness analysis:**
 :   well-defined attribute grammar
 
-## The problem of interference
+## Simple host language & Forwarding
 
 \StartCol
 
 ```
+nonterminal Expr with eval;
+
+synthesized attribute eval :: Boolean;
+
+production or
+e::Expr ::= l::Expr  r::Expr
+{ 
+  e.eval = l.eval || r.eval;
+}
+production literal
+e::Expr ::= b::Bool
+{ 
+  e.eval = b;
+}
+```
+
+\EndCol\StartCol
+
+\vspace{60pt}
+
+```
+production implies
+e::Expr ::= l::Expr  r::Expr
+{
+  forwards to or(not(l), r);
+}
+```
+
+\EndCol
+
+## The problem of interference
+
+\StartCol
+
+Extension A\vspace{-8pt}
+
+```
+synthesized tainted :: Boolean;
 production taint
 e::Expr ::= x::Expr
 {
@@ -36,8 +80,7 @@ e::Expr ::= x::Expr
 aspect or
 e::Expr ::= l::Expr  r::Expr
 { 
-  e.tainted = 
-    l.tainted || r.tainted;
+  e.tainted = l.tainted || r.tainted;
 }
 aspect literal
 e::Expr ::= b::Bool
@@ -48,7 +91,10 @@ e::Expr ::= b::Bool
 
 \EndCol\StartCol
 
+Extension B\vspace{-8pt}
+
 ```
+synthesized transform :: Expr;
 production id
 e::Expr ::= x::Expr
 {
@@ -58,8 +104,7 @@ e::Expr ::= x::Expr
 aspect or
 e::Expr ::= l::Expr  r::Expr
 {
-  e.transform = 
-    or(l.transform, r.transform);
+  e.transform = or(l.transform, r.transform);
 }
 aspect literal
 e::Expr ::= b::Bool
@@ -69,7 +114,6 @@ e::Expr ::= b::Bool
 ```
 
 \EndCol
-
 
 ## The problem of interference
 
@@ -85,23 +129,25 @@ e::Expr ::= b::Bool
 ## Non-interference through verification
 
 - Extensions come with properties
-- Ensure these properties are preseved under composition
-- In a sense, composable proofs
+    - $P(t) = t.tainted \iff \text{``$t$ contains a $taint$ node"}$
+- Ensure these properties are preseved under composition with other extensions
+- In a sense, modular and composable proofs
+- To achieve this, we must constrain extensions slightly
 
 \vspace{1pt}
 
 - Tricky: proofs *and* specifications become incomplete
 
-## Coherence
+## A coherent property
 
 $$P(t) \iff P(t.forward)$$
 
-- Tool to complete specifications
+- To start with, this allows us to complete specifications
 
 ## Non-interference
 
-1. All properties are coherent.
-2. All coherent properties are preserved.
+1. All properties must be coherent.
+2. Extensions must preserve all coherent properties.
 
 ## So what went wrong?
 
@@ -120,11 +166,26 @@ e::Expr ::= x::Expr
 
 ## Unreasonable approach
 
-$$t.s = t.forward.s$$
+$$t.s = t.\mathit{forward}.s$$
 
 ## Being less unreasonable (1/3): errors
 
-$$t.errors = t.forward.errors$$
+$$t.errors = t.\mathit{forward}.errors$$
+
+Then this becomes incoherent:
+
+```
+production bridge
+e::Expr ::= x::ExtensionAST
+{
+  e.errors = x.errors;
+  forwards to x.translation;
+}
+```
+
+## Being less unreasonable (1/3): errors
+
+$$t.errors = t.\mathit{forward}.errors$$
 
 \StartCol
 
@@ -154,8 +215,8 @@ e::Expr ::= x::ExtensionAST
 
 ## Being less unreasonable (2/3): trees
 
-- "Strict equality" is interfering, which is actually useful
-- $.host$ as recursive $.forward$
+- "Strict equality" is incoherent, which is actually useful
+- $.host$ as recursive application of $.\mathit{forward}$
 - Fact: $P(t) \iff P(t.host)$
 - Trick: $t.s.host = t.host.s$
 
@@ -172,9 +233,19 @@ $$t.pp.parse.host = t.host$$
 - Close the world
 - The *only* property we know of `pp`
 
+## Being less unreasonable: summary
+
+- Generic error production methodology
+- Tree-valued attributes already are flexible
+- Closing the world on a single attribute: `pp`
+
+\vspace{1pt}
+
+- Extensions "feel" like native language features
+
 ## Automatic property testing
 
-- $t.errors = t.forward.errors$
+- $t.errors = t.\mathit{forward}.errors$
 - $t.typerep.host = t.host.typerep$
 - $t.pp.parse.host = t.host$
 
