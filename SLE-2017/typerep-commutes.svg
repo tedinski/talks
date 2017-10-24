@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="5in"
-   height="2in"
-   viewBox="0 0 450.00001 180.00001"
+   width="7.042583in"
+   height="2.0104227in"
+   viewBox="0 0 633.83248 180.93804"
    id="svg4232"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -734,17 +734,21 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="399.38175"
-     inkscape:cy="76.408858"
+     inkscape:cx="334.90958"
+     inkscape:cy="88.957539"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1855"
-     inkscape:window-height="1176"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
      inkscape:window-x="65"
      inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-maximized="1"
+     fit-margin-left="2"
+     fit-margin-right="2"
+     fit-margin-top="0.4"
+     fit-margin-bottom="0.4" />
   <metadata
      id="metadata4237">
     <rdf:RDF>
@@ -761,7 +765,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-872.36215)">
+     transform="translate(96.242119,-875.40137)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:'Bitstream Vera Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -870,5 +874,49 @@
          id="tspan19418"
          x="297"
          y="975.79071">.host</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="56.615025"
+       y="909.19659"
+       id="text4811"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4813"
+         x="56.615025"
+         y="909.19659">1i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-61.956402"
+       y="1042.7679"
+       id="text4815"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4817"
+         x="-61.956402"
+         y="1042.7679">(struct complex){.imag = 1}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="359.47214"
+       y="912.05371"
+       id="text4819"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4821"
+         x="359.47214"
+         y="912.05371">complexType</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="361.61502"
+       y="1042.7679"
+       id="text4823"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4825"
+         x="361.61502"
+         y="1042.7679">structType(&quot;complex&quot;)</tspan></text>
   </g>
 </svg>

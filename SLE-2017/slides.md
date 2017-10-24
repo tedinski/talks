@@ -168,6 +168,9 @@ e::Expr ::= x::Expr
 
 $$t.s = t.\mathit{forward}.s$$
 
+- Ensures we preserve all coherent properties
+- Surprisingly good at ensuring intended properties are coherent
+
 ## Being less unreasonable (1/3): errors
 
 $$t.errors = t.\mathit{forward}.errors$$
@@ -255,6 +258,7 @@ $$t.pp.parse.host = t.host$$
 
 ## Summary
 
+- Support expressive extensions: new syntax & analysis
 - Modular and composable proofs through coherence
 - But also supports a testing-based approach
 - Can make extensions "feel native"
