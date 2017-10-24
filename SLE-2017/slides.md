@@ -149,6 +149,10 @@ $$P(t) \iff P(t.forward)$$
 1. All properties must be coherent.
 2. Extensions must preserve all coherent properties.
 
+
+- Extension developers check these restrictions independently
+- All (coherent) properties hold of the composed language
+
 ## So what went wrong?
 
 ```
