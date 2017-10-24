@@ -734,8 +734,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="334.90958"
-     inkscape:cy="88.957539"
+     inkscape:cx="307.05244"
+     inkscape:cy="128.95754"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -757,7 +757,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -876,29 +876,29 @@
          y="975.79071">.host</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="56.615025"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="49.472168"
        y="909.19659"
        id="text4811"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4813"
-         x="56.615025"
-         y="909.19659">1i</tspan></text>
+         x="49.472168"
+         y="909.19659">1 + 3i</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
-       x="-61.956402"
-       y="1042.7679"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-83.384979"
+       y="1042.0537"
        id="text4815"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4817"
-         x="-61.956402"
-         y="1042.7679">(struct complex){.imag = 1}</tspan></text>
+         x="-83.384979"
+         y="1042.0537">(struct complex){.real = 1, .imag = 3}</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="359.47214"
        y="912.05371"
        id="text4819"
@@ -906,10 +906,10 @@
          sodipodi:role="line"
          id="tspan4821"
          x="359.47214"
-         y="912.05371">complexType</tspan></text>
+         y="912.05371">complex</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       style="font-style:normal;font-weight:normal;font-size:13.75px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#383980;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="361.61502"
        y="1042.7679"
        id="text4823"
@@ -917,6 +917,6 @@
          sodipodi:role="line"
          id="tspan4825"
          x="361.61502"
-         y="1042.7679">structType(&quot;complex&quot;)</tspan></text>
+         y="1042.7679">struct complex</tspan></text>
   </g>
 </svg>

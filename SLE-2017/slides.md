@@ -4,12 +4,53 @@ subtitle: "A practical approach"
 author:   Ted Kaminski and Eric Van Wyk \newline (University of Minnesota)
 date:     October 2017
 fontsize: 12pt
-classoption: aspectratio=169
+classoption: aspectratio=169, xcolor=dvipsnames
 ---
 
 ## Library model of language extension
 
 ![](extension-model.pdf)
+
+## Examples of extensions
+
+\StartCol
+
+\begin{alltt}
+\small
+\begin{tabbing}
+aa\=aa\=aa\=aa\=aa\=aa\=\kill
+\\
+typedef \hib{datatype Tree} Tree; \\
+\hib{datatype Tree \ttlbrace} \\
+\>\hib{Fork (} Tree*\hib{,} Tree*\hib{,} const char* \hib{);} \\
+\>\hib{Leaf (} const char* \hib{); }\\
+\hib{\ttrbrace;}
+\end{tabbing}
+\end{alltt}
+
+\EndCol\StartCol
+
+\begin{alltt}
+\small
+\begin{tabbing}
+aa\=aa\=aa\=aa\=aa\=aa\=\kill
+\cilk{cilk} int count\_matches (Tree *t) \ttlbrace \\
+\>\hib{match (} t \hib{) \ttlbrace} \\
+\>\>\hib{Fork(t1,t2,str): \ttlbrace} \\ 
+\>\>\>int res\_t, res\_t1, res\_t2; \\
+\>\>\>\cilk{spawn res\_t1 = count\_matches(} t1 \cilk{);} \\
+\>\>\>\cilk{spawn res\_t2 = count\_matches(} t2 \cilk{);} \\
+\>\>\>res\_t = (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \\
+\>\>\>\cilk{sync;} \\
+\>\>\>\cilk{cilk return} res\_t1 + res\_t2 + res\_t \cilk{;} \\
+\>\>\hib{\ttrbrace ;} \\
+\>\>\hib{Leaf(str): \ttlbrace} return (str \regex{=\textasciitilde{} /foo[1-9]+/}) ? 1 : 0; \hib{\ttrbrace ;} \\
+\>\hib{\ttrbrace} \\
+\ttrbrace
+\end{tabbing}
+\end{alltt}
+
+\EndCol
 
 ## Goals
 
@@ -122,7 +163,7 @@ e::Expr ::= b::Bool
 ## The problem of interference
 
 - Both worked perfectly in isolation.
-- Who is at fault?
+- Who is at fault? Is there anyone blame?
 - What went wrong?
 - How can we prevent this?
 
@@ -132,7 +173,7 @@ e::Expr ::= b::Bool
     - $P(t) = t.tainted \iff \text{``$t$ contains a $taint$ node"}$
 - Ensure these properties are preseved under composition with other extensions
 - In a sense, modular and composable proofs
-- To achieve this, we must constrain extensions slightly
+- To achieve this, we must constrain extensions (hopefully slightly)
 
 \vspace{1pt}
 
@@ -164,6 +205,7 @@ e::Expr ::= x::Expr
 }
 ```
 
+- This gives us a precise notion of blame
 
 # Can we do this without verification?
 
@@ -267,6 +309,7 @@ $$t.pp.parse.host = t.host$$
 - But also supports a testing-based approach
 - Can make extensions "feel native"
 - Restriction boils down to "must forward to actually-equivalent tree"
+    - Host-language relative restrictions
 
 ## Thanks!
 
