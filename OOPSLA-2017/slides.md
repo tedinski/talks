@@ -329,20 +329,25 @@ lambda (int x) -> (*z = x * y + *z)
 
 ## Type qualifiers
 
+```
+```
+
 - General problem with annotation-driven analysis
     - Need to have an equivalent host-language tree
 - Previous work\footnote{Foster, et al. PLDI 1999} has extended C with generic type qualifiers
     - Changes meaning of host again, not an extension in our sense
 - New qualifiers as language extensions (See our GPCE paper this year!)
 
-```
-typedef  datatype Expr  Expr;
-datatype Expr {
-  Add (Expr * nonnull, Expr * nonnull);
-  Mul (Expr * nonnull, Expr * nonnull);
-  Const (int);
-};
-```
+\begin{alltt}
+\begin{tabbing}
+typedef  \adt{datatype Expr}  Expr; \\
+\adt{datatype Expr \ttlbrace} \\
+\ \ \adt{Add (}Expr * \nonnull{}\adt{,} Expr * \nonnull{}\adt{);} \\
+\ \ \adt{Mul (}Expr * \nonnull{}\adt{,} Expr * \nonnull{}\adt{);} \\
+\ \ \adt{Const (}int\adt{);} \\
+\adt{\ttrbrace}; \\
+\end{tabbing}
+\end{alltt}
 
 ## Enabling more extensions
 
