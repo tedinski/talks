@@ -404,3 +404,9 @@ Check things out:
 - [melt.cs.umn.edu](https://melt.cs.umn.edu)
 - [github.com/melt-umn](https://github.com/melt-umn)
 
+\vspace{60pt}
+\hspace*{60pt}
+\includegraphics[scale=0.2]{artifacts_available.jpg}
+\hspace{100pt}
+\includegraphics[scale=0.2]{artifacts_evaluated_functional.jpg}
+
