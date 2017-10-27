@@ -240,6 +240,8 @@ aa\=aa\=aa\=aa\=aa\=aa\=\kill
 
 ## Extensions to AbleC
 
+\small\setstretch{0.8}
+
 ```
   transform {
     for (unsigned i : m, unsigned j : n) {
@@ -263,12 +265,15 @@ aa\=aa\=aa\=aa\=aa\=aa\=\kill
 
 ## Extensions to AbleC
 
+\small
+
 ```
 matlab
 (unsigned char pic[height][width][3]) =
-  mandelbrot(double xstart, double xend, double ystart, double yend, double iter_d)
+  mandelbrot(double xstart, double xend,
+             double ystart, double yend, double iter_d)
 {
-
+  ...
 }
 ```
 
