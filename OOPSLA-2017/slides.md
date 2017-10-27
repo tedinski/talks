@@ -73,6 +73,22 @@ Our criteria:
 
 Many approaches to extensible languages.
 
+\StartCol
+
+- ExtendJ (using JastAdd)
+- SujarJ (using Spoofax)
+- Wyvern/VerseML
+- mbeddr
+
+\EndCol\StartCol
+
+- XTC
+- XoC
+- object algebras
+- and others
+
+\EndCol
+
 What distinguishes this work is how two questions are answered:
 
 1. Who composes the language features?
