@@ -175,11 +175,20 @@ e::Expr ::= b::Bool
 - Extensions come with properties
     - $P(t) = t.tainted \iff \text{``$t$ contains a $taint$ node"}$
 - Ensure these properties are preseved under composition with other extensions
+
+\vspace{1pt}
+
 - To achieve this, we must constrain extensions (hopefully only slightly)
 
 \vspace{1pt}
 
 - Tricky: proofs *and* specifications become incomplete
+
+\vspace{-10pt}
+
+$$P(or(l,r)) \leftarrow \ldots$$
+$$P(literal(b)) \leftarrow \ldots$$
+$$P(id(t)) \leftarrow ~???$$
 
 ## Some simplified logic
 
@@ -224,7 +233,9 @@ $$t.s = t.\mathit{forward}.s$$
 
 ## Coherent notions of equality
 
-- "Strict equality" is incoherent, which is actually useful
+$$ id(literal(F)) \overset{?}{=} literal(F)$$
+
+- The usual notion of equality is incoherent, which is actually useful
 - $.host$ as recursive application of $.\mathit{forward}$
 - Fact: $P(t) \iff P(t.host)$
 - Trick: $t.s.host = t.host.s$
